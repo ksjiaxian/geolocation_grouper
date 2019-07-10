@@ -31,6 +31,28 @@ def generate_geo_relationship(country, other_center):
     else:
         return (country, country2, "cross border")
     
+def percent_coverage_generator(center, big_cluster, percent_coverage):
+    # percentage coverage
+    # first create a list of tuples (distance, coord)
+    loc_list_tuples = []
+    for group in big_cluster:
+        #list of tuples
+        location_list = group.get_locations()
+        for coord in location_list:
+            dist = formulas.haversine(center.get_lat(), center.get_lng(), coord[0], coord[1])
+            loc_list_tuples.append((dist, coord))
+    loc_list_tuples.sort(key=lambda tup: tup[0])  # sorts in place
+    num_to_include = math.ceil(float(percent_coverage) * len(loc_list_tuples))
+    local_inventors = []
+    for coord in loc_list_tuples[:num_to_include]:
+        local_inventors.append(coord[1])
+    radius_for_percent =  loc_list_tuples[num_to_include - 1][0]
+    # dict for local inventors
+    local_inventor_dict = {'radius': radius_for_percent,
+                           'count': num_to_include,
+                       'locations': local_inventors}
+    return local_inventor_dict
+    
 def output_each_patent(ungrouped, company, company_id, base_radius, coverage_percentage):
     print(company)
     print(len(ungrouped))
@@ -142,27 +164,20 @@ def output_each_patent(ungrouped, company, company_id, base_radius, coverage_per
         else:
             row.append(write_remote_cluster)
         
-        # percentage coverage
-        # first create a list of tuples (distance, coord)
-        loc_list_tuples = []
-        for group in hq_set:
-            #list of tuples
-            location_list = group.get_locations()
-            for coord in location_list:
-                dist = formulas.haversine(hq.get_lat(), hq.get_lng(), coord[0], coord[1])
-                loc_list_tuples.append((dist, coord))
-        loc_list_tuples.sort(key=lambda tup: tup[0])  # sorts in place
-        num_to_include = math.ceil(float(percent_coverage) * len(loc_list_tuples))
-        local_inventors = []
-        for coord in loc_list_tuples[:num_to_include]:
-            local_inventors.append(coord[1])
-        radius_for_percent =  loc_list_tuples[num_to_include - 1][0]
-        # dict for local inventors
-        local_inventor_dict = {'radius': radius_for_percent,
-                               'count': num_to_include,
-                           'locations': local_inventors
-            }
+        # percentage coverage for local
+        local_inventor_dict = percent_coverage_generator(hq, hq_set, fast_real(coverage_percentage))
         row.append(local_inventor_dict) 
+        
+        # percentage coverage for remote
+        if num_of_remote_groups == 0:
+            row.append('N/A')
+        else:
+            remote_inventor_dict_list = []
+            for remote_group in remote_group_list:
+                (center, group, size) = remote_group
+                remote_inventor_dict = percent_coverage_generator(center, group, fast_real(coverage_percentage))
+                remote_inventor_dict_list.append(remote_inventor_dict)
+            row.append(remote_inventor_dict_list)
         csv_writer.writerow(row)
         
 def get_focal_point(location_list, r_base):
@@ -207,7 +222,7 @@ if __name__ == '__main__':
     with open('outputs/grouped_groups.tsv', 'w', newline="\n", encoding='utf-8-sig') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
         header = ["company", "id", "num_of_clusters_in_HQ_region", "num_of_clusters_in_remote_regions", "total_number_of_groups (HQ+remote)", "num_of_R&D_centers", "num_of_remote_R&D_centers", "radius_base", 
-                  "coverage_percentage", "HQ", "remote_groups", "inventors_in_local"]
+                  "coverage_percentage", "HQ", "remote_groups", "%_coverage_on_local", "%_coverage_on_remote"]
         csv_writer.writerow(header)
         
     #create a dictionary that maps company to a list of the company patent groupings
