@@ -1,4 +1,5 @@
 import csv
+import ast
 import random
 
 #this method compares methods 1 and 2 of clustering by pairing the clusters and
@@ -36,11 +37,18 @@ def get_cluster_set(filename, companies):
         for row in reader:
             curr_company = row['company']
             if curr_company in companies:
+                # list of clusters in dictionary form with local cluster at index 0
+                cluster_list = [] 
                 #get the hq cluster
-                
+                local_cluster_str = row['HQ']
+                local_cluster_dict = ast.literal_eval(local_cluster_str)
+                cluster_list.append(local_cluster_dict)
                 #get the remote clusters
-                #TODO!!
-                pass #for now
+                remote_cluster_list_str = row['remote_groups']
+                remote_cluster_dict_list = ast.literal_eval(remote_cluster_list_str)
+                for remote_dict in remote_cluster_dict_list:
+                    cluster_list.append(remote_dict)
+                company_to_clusterset[curr_company] = cluster_list
             
             
     return company_to_clusterset

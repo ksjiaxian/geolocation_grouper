@@ -225,7 +225,7 @@ if __name__ == '__main__':
     with open('outputs/groupings.tsv', 'w', newline="\n", encoding='utf-8-sig') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
         header = ["company", "id", "number_of_inventors", "number_of_local_inventors", "number_of_remote_inventors", "number_of_clusters (local+remote)", "radius_local", 
-                  "radius_remote", "local_cluster", "nonlocal_cluster", "remote_cluster"]
+                  "radius_remote", "HQ", "nonlocal_cluster", "remote_groups"]
         csv_writer.writerow(header)
     # process radii
     r1 = 0
