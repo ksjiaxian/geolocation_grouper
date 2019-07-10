@@ -206,7 +206,7 @@ if __name__ == '__main__':
     #write header
     with open('outputs/grouped_groups.tsv', 'w', newline="\n", encoding='utf-8-sig') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
-        header = ["company", "company_id", "num_of_clusters_in_HQ_region", "num_of_clusters_in_remote_regions", "total_number_of_groups (HQ+remote)", "num_of_R&D_centers", "num_of_remote_R&D_centers", "radius_base", 
+        header = ["company", "id", "num_of_clusters_in_HQ_region", "num_of_clusters_in_remote_regions", "total_number_of_groups (HQ+remote)", "num_of_R&D_centers", "num_of_remote_R&D_centers", "radius_base", 
                   "coverage_percentage", "HQ", "remote_groups", "inventors_in_local"]
         csv_writer.writerow(header)
         
