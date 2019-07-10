@@ -69,7 +69,7 @@ if __name__ == '__main__':
         reader = csv.DictReader(csvfile, delimiter='\t')
         
         for row in reader:
-            companies.add((row['company']), )
+            companies.add((row['company']), ) ##todo
             
     sample = random.sample(companies, num_of_companies)
     
