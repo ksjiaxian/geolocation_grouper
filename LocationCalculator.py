@@ -1,4 +1,3 @@
-#import requests
 import formulas
 import csv
 import requests
