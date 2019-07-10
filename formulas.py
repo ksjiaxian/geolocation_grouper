@@ -23,4 +23,5 @@ def euclidean(lat, lng, lat0, lng0):
     return deglen*sqrt(x*x + y*y)
 
 def get_api_key():
-    return 'AhaM9zXaRfiQp-9TLJtPjO1qWgCePorHjjjffQoxBd5UPPlAwJk7QfZ9apDfXAcn'
+    #get the api key from email 
+    raise ValueError("input the api key!")
