@@ -23,3 +23,6 @@ def euclidean(lat, lng, lat0, lng0):
     x = float(lat) - float(lat0)
     y = (float(lng) - float(lng0))*cos(float(lat0))
     return deglen*sqrt(x*x + y*y)
+
+def get_api_key():
+    return 'AhaM9zXaRfiQp-9TLJtPjO1qWgCePorHjjjffQoxBd5UPPlAwJk7QfZ9apDfXAcn'

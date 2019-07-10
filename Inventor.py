@@ -16,7 +16,7 @@ class inventor:
                 print(unidecode(state))
                 response = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + city + ' ' + state + ' ' + country,
                                 params={"include":"queryParse",
-                                "key":"Ahrn_2njXN5bYX-QWFpvfQqJJFTuIOvCnacTFbTLO48RL8rjYVZbmC5Fw6YTM5tb"})
+                                "key":formulas.get_api_key()})
                 data = response.json()
                 self.lat = data['resourceSets'][0]['resources'][0]['point']['coordinates'][0]
                 self.lng = data['resourceSets'][0]['resources'][0]['point']['coordinates'][1]

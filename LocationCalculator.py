@@ -64,7 +64,7 @@ def generate_geo_relationship(country, other_center):
         #this is for using the bing reverse geocode api
         coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
         response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
-                    params={"key":"Ahrn_2njXN5bYX-QWFpvfQqJJFTuIOvCnacTFbTLO48RL8rjYVZbmC5Fw6YTM5tb",
+                    params={"key":formulas.get_api_key(),
                             })
         data2 = response2.json()
         #get the country data
@@ -110,7 +110,7 @@ def output_each_patent(ungrouped, company, id, r1, r2):
         # get local country
         coord1 = str(local_center.get_lat()) +","+ str(local_center.get_lng())
         response1 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord1,
-                    params={"key":"Ahrn_2njXN5bYX-QWFpvfQqJJFTuIOvCnacTFbTLO48RL8rjYVZbmC5Fw6YTM5tb",
+                    params={"key":formulas.get_api_key(),
                             })
         data1 = response1.json()
         #get the country data

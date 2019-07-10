@@ -14,7 +14,7 @@ def generate_geo_relationship(country, other_center):
         #this is for using the bing reverse geocode api
         coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
         response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
-                    params={"key":"Ahrn_2njXN5bYX-QWFpvfQqJJFTuIOvCnacTFbTLO48RL8rjYVZbmC5Fw6YTM5tb",
+                    params={"key":formulas.get_api_key(),
                             })
         data2 = response2.json()
         #get the country data
@@ -50,7 +50,7 @@ def output_each_patent(ungrouped, company, company_id, base_radius, coverage_per
         # get local country
         coord1 = str(local_center.get_lat()) +","+ str(local_center.get_lng())
         response1 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord1,
-                    params={"key":"Ahrn_2njXN5bYX-QWFpvfQqJJFTuIOvCnacTFbTLO48RL8rjYVZbmC5Fw6YTM5tb",
+                    params={"key":formulas.get_api_key(),
                             })
         data1 = response1.json()
         
@@ -109,6 +109,14 @@ def output_each_patent(ungrouped, company, company_id, base_radius, coverage_per
             remote_group_list.append((loc, group, size))
             remote_group_list.sort(key=lambda tup: tup[2])  # sorts in place
             remote_group_list.reverse()
+            
+        #this is the number of remote groups of clusters
+        num_of_remote_groups = len(remote_group_list)
+        total_num_of_groups = num_of_remote_groups + 1
+        
+        #add that information to the row
+        row.insert(5, total_num_of_groups)
+        row.insert(6, num_of_remote_groups)
         
         write_remote_cluster = []
         for remote_group in remote_group_list:
@@ -198,7 +206,7 @@ if __name__ == '__main__':
     #write header
     with open('outputs/grouped_groups.tsv', 'w', newline="\n", encoding='utf-8-sig') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
-        header = ["company", "company_id", "number_of_groups_HQ", "number_of__groups_REMOTE", "total_number_of_groups (HQ+remote)", "radius_base", 
+        header = ["company", "company_id", "num_of_clusters_in_HQ_region", "num_of_clusters_in_remote_regions", "total_number_of_groups (HQ+remote)", "num_of_R&D_centers", "num_of_remote_R&D_centers", "radius_base", 
                   "coverage_percentage", "HQ", "remote_groups", "inventors_in_local"]
         csv_writer.writerow(header)
         
