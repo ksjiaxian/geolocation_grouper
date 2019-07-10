@@ -232,7 +232,7 @@ if __name__ == '__main__':
     r1 = 0
     r2 = 0
     
-    with open('inputs/arguments.csv', encoding='utf-8-sig') as csvfile:
+    with open('inputs/arguments_m1.csv', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=',')
         
         #create the list of ungrouped addresses
@@ -243,10 +243,10 @@ if __name__ == '__main__':
     total_length = 0     
     # process patent records
 
-    with open('inputs/test_comminglingteam_member_location.csv', encoding='latin-1') as csvfile:
+    with open('inputs/patent_list_100company.csv', encoding='latin-1') as csvfile:
         reader_count = csv.DictReader(csvfile, delimiter=',')
         total_length =  sum(1 for row in reader_count)
-    with open('inputs/test_comminglingteam_member_location.csv', encoding='latin-1') as csvfile:
+    with open('inputs/patent_list_100company.csv', encoding='latin-1') as csvfile:
 
         reader = csv.DictReader(csvfile, delimiter=',')
         
@@ -259,7 +259,7 @@ if __name__ == '__main__':
         for row in reader:
             print(reader.line_num)
             id = row['id']
-            company = row['acquirer_name']
+            company = row['acquiree_name']
             
             id_to_company[id] = company
             

@@ -11843,3 +11843,86 @@ id,acquiree_name,patent_id,patent_priority_year,inventor_id,inventor_name1,inven
 02710efb-210b-c8d6-c101-081b0fe8a8fe,andrews kurth llp,8799471,2005,5892535-4,"Mai, Khanh",Alpharetta,GA,US,34.0753,-84.2942,1,USA,TX,Austin,Austin
 02710efb-210b-c8d6-c101-081b0fe8a8fe,andrews kurth llp,8799471,2005,7036011-1,"Grimes, Tom",Ottawa,NULL,CA,45.4167,-75.7,1,USA,TX,Austin,Austin
 02710efb-210b-c8d6-c101-081b0fe8a8fe,andrews kurth llp,8799471,2005,8102245-2,"Noll, Roland",Columbia,MD,US,39.2403,-76.8397,1,USA,TX,Austin,Austin
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7368798,2005,5068628-1,"Ghoshal, Sajol C.",Austin,TX,US,30.2669,-97.7428,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7368798,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7469348,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7469348,2005,6147631-2,"Crawley, Philip John",Folsom,CA,US,38.6781,-121.175,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7500116,2005,5068628-1,"Ghoshal, Sajol C.",Austin,TX,US,30.2669,-97.7428,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7500116,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7500118,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7500118,2005,6147631-2,"Crawley, Philip John",Folsom,CA,US,38.6781,-121.175,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7560825,2006,6147631-2,"Crawley, Philip John",Folsom,CA,US,38.6781,-121.175,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7610422,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7610422,2007,7526518-3,"Bliss, David Edward",Loomis,CA,US,38.8214,-121.1919,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7620825,2005,5068628-1,"Ghoshal, Sajol C.",Austin,TX,US,30.2669,-97.7428,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7620825,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7620825,2005,7620825-3,"Crepin, Francois",Orangevale,CA,US,38.6786,-121.2247,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7685452,2005,5068628-1,"Ghoshal, Sajol C.",Austin,TX,US,30.2669,-97.7428,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7685452,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7685452,2005,6147631-2,"Crawley, Philip John",Folsom,CA,US,38.6781,-121.175,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7701731,2007,4678947-2,"Dhuyvetter, Timothy Alan",Arnold,CA,US,38.2556,-120.35,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7701731,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7706112,2006,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7706112,2006,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7732889,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7732889,2007,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7761719,2006,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7761719,2006,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7855866,2007,6088445-3,"Camagna, John R.",Eldorado Hills,CA,US,38.6857,-121.0822,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7855866,2007,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7855866,2007,7855866-3,"Cai, Charles",Mather,CA,US,37.8822,-119.8547,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7864546,2007,4678947-2,"Dhuyvetter, Timothy Alan",Arnold,CA,US,38.2556,-120.35,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7864546,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7898825,2008,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7898825,2008,6147631-2,"Crawley, Philip John",Folsom,CA,US,38.6781,-121.175,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7898825,2008,6949968-1,"Mulligan, Michael David",Davis,CA,US,38.545,-121.7394,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7899968,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7899968,2007,7526518-3,"Bliss, David Edward",Loomis,CA,US,38.8214,-121.1919,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7921252,2011,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7921252,2011,7526518-3,"Bliss, David Edward",Loomis,CA,US,38.8214,-121.1919,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7921308,2007,4678947-2,"Dhuyvetter, Timothy Alan",Arnold,CA,US,38.2556,-120.35,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7921308,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7923710,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7923710,2007,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7923710,2007,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7964993,2007,6229466-1,"Gattani, Amit",Roseville,CA,US,38.7522,-121.2869,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7964993,2007,6310380-1,"Cai, Jun",Mather,CA,US,37.8822,-119.8547,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7965480,2007,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7965480,2007,6229466-1,"Gattani, Amit",Roseville,CA,US,38.7522,-121.2869,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,7965480,2007,6310380-1,"Cai, Jun",Mather,CA,US,37.8822,-119.8547,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,8050315,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,8050315,2007,7526518-3,"Bliss, David Edward",Loomis,CA,US,38.8214,-121.1919,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,8400230,2009,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,8400230,2009,8400230-2,"Taylor, Kenneth William",Davis,CA,US,38.545,-121.7394,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9185834,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9185834,2007,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9185834,2007,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9189036,2007,5068628-1,"Ghoshal, Sajol C.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9189036,2007,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9189036,2007,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9191216,2005,5068628-1,"Ghoshal, Sajol C.",Austin,TX,US,30.2669,-97.7428,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9191216,2005,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9191216,2005,9191216-3,"Crepin, J. Francois",Orangevale,CA,US,38.6786,-121.2247,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9197423,2008,6088445-3,"Camagna, John R.",El Dorado Hills,CA,US,38.6858,-121.0811,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9197423,2008,6147631-2,"Crawley, Philip John",Sacramento,CA,US,38.5817,-121.4933,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9197423,2008,6229466-1,"Gattani, Amit",Roseville,CA,US,38.7522,-121.2869,1,USA,CA,Sacramento,Folsom
+0272086b-9e63-d1b9-7633-6a4db7e02c0d,akros silicon,9197423,2008,6310380-1,"Cai, Jun",Mather,CA,US,37.8822,-119.8547,1,USA,CA,Sacramento,Folsom
+027a72da-6ad5-1e9e-9d92-36d073471521,livestream,8128503,2009,8128503-1,"Haot, Max",New York,NY,US,40.7142,-74.0064,1,USA,NY,New York City,New York
+027a72da-6ad5-1e9e-9d92-36d073471521,livestream,8128503,2009,8128503-2,"Messinger, Lior",New York,NY,US,40.7142,-74.0064,1,USA,NY,New York City,New York
+027a72da-6ad5-1e9e-9d92-36d073471521,livestream,8764569,2012,8128503-1,"Haot, Max",New York,NY,US,40.7142,-74.0064,1,USA,NY,New York City,New York
+027a72da-6ad5-1e9e-9d92-36d073471521,livestream,8764569,2012,8128503-2,"Messinger, Lior",New York,NY,US,40.7142,-74.0064,1,USA,NY,New York City,New York
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,8904405,2014,8904405-1,"Peeters, Johannes",Jade,NULL,DE,53.4,8.2833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,8904405,2014,8904405-2,"Stoehler, Friedhelm Herbert",Untermerzbach-Memmelsdorf,NULL,DE,50.1333,10.85,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,8904405,2014,8904405-3,"Doehler, Horst Walter",Kaufering,NULL,DE,48.0833,10.8833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,8978037,2014,8904405-1,"Peeters, Johannes",Jade,NULL,DE,53.4,8.2833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,8978037,2014,8904405-2,"Stoehler, Friedhelm Herbert",Untermerzbach-Memmelsdorf,NULL,DE,50.1333,10.85,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,8978037,2014,8904405-3,"Doehler, Horst Walter",Kaufering,NULL,DE,48.0833,10.8833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9038090,2014,8904405-1,"Peeters, Johannes",Jade,NULL,DE,53.4,8.2833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9038090,2014,8904405-2,"Stoehler, Friedhelm Herbert",Untermerzbach-Memmelsdorf,NULL,DE,50.1333,10.85,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9038090,2014,8904405-3,"Doehler, Horst Walter",Kaufering,NULL,DE,48.0833,10.8833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9519519,2015,8904405-1,"Peeters, Johannes",Jade,NULL,DE,53.4,8.2833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9519519,2015,8904405-2,"Stoehler, Friedhelm Herbert",Augsburg,NULL,DE,50.5895,8.4669,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9519519,2015,8904405-3,"Doehler, Horst Walter",Untermerzbach-Memmelsdorf,NULL,DE,50.1333,10.85,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9672072,2015,8904405-1,"Peeters, Johannes",Jade,NULL,DE,53.4,8.2833,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9672072,2015,8904405-2,"Stoehler, Friedhelm Herbert",Augsburg,NULL,DE,50.5895,8.4669,1,DEU,,Augsburg,Augsburg
+027ef33b-bb77-090b-913a-df0ea0c850c9,zit consulting,9672072,2015,8904405-3,"Doehler, Horst Walter",Untermerzbach-Memmelsdorf,NULL,DE,50.1333,10.85,1,DEU,,Augsburg,Augsburg

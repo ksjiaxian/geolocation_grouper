@@ -158,9 +158,9 @@ def output_each_patent(ungrouped, company, company_id, base_radius, coverage_per
             local_inventors.append(coord[1])
         radius_for_percent =  loc_list_tuples[num_to_include - 1][0]
         # dict for local inventors
-        local_inventor_dict = {'count': num_to_include,
-                           'locations': local_inventors,
-                           'radius': radius_for_percent
+        local_inventor_dict = {'radius': radius_for_percent,
+                               'count': num_to_include,
+                           'locations': local_inventors
             }
         row.append(local_inventor_dict) 
         csv_writer.writerow(row)
@@ -242,7 +242,7 @@ if __name__ == '__main__':
             for s in loc_list:
                 old_coord = s[s.find("(")+1:s.find(")")]
                 coord = old_coord.split(" ")
-            location_list.append((fast_real(coord[0]), fast_real(coord[1])))
+                location_list.append((fast_real(coord[0]), fast_real(coord[1])))
             
             id_to_company[company_id] = company
             
@@ -259,7 +259,7 @@ if __name__ == '__main__':
     r_base = 0
     percent_coverage = 0.0
     
-    with open('inputs/arguments.csv', encoding='utf-8-sig') as csvfile:
+    with open('inputs/arguments_m2.csv', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=',')
         
         #create the list of ungrouped addresses

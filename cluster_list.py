@@ -264,7 +264,7 @@ if __name__ == '__main__':
     r1 = 0
     r2 = 0
     
-    with open('inputs/arguments.csv', encoding='utf-8-sig') as csvfile:
+    with open('inputs/arguments_m2.csv', encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=',')
         
         #create the list of ungrouped addresses
