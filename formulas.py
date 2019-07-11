@@ -24,4 +24,4 @@ def euclidean(lat, lng, lat0, lng0):
 
 def get_api_key():
     #get the api key from email 
-    return "ApHLqXrCyLz-km2v3_4IZGBCy6jnjAQ7ohE4w2HjD9_w734vAk5vcc4mXxTIPbQy"
+    return ""
