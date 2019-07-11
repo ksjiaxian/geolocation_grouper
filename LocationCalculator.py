@@ -59,18 +59,43 @@ def generate_geo_relationship(country, other_center):
    
     #get the country data
     country2 = other_center.get_country()
-    if country2 == '':
-        #this is for using the bing reverse geocode api
+    state = other_center.get_state()   
+    if country2 != 'US':
+        other_center.set_state("N/A")
+    elif country2 == 'US':
+        if state == '':
+            coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
+            response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
+                        params={"key":formulas.get_api_key(),
+                                })
+            data2 = response2.json()
+            try:
+                state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
+                other_center.set_state(state)
+            except:
+                other_center.set_state("N/A")
+    else:
         coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
         response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                     params={"key":formulas.get_api_key(),
                             })
         data2 = response2.json()
-        #get the country data
-        try:
-            country2 = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
-        except:
-            country2 = "N/A"
+        if state == '':
+            try:
+                country2 = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
+                if country2 == 'US':
+                    state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
+                    other_center.set_state(state)
+                else:
+                    other_center.set_state("N/A")
+            except:
+                country2 = "N/A"
+                other_center.set_state("N/A")
+        else:
+            try:
+                country2 = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
+            except:
+                country2 = "N/A"
       
     if country == country2:
         if country == "N/A":
@@ -101,34 +126,47 @@ def output_each_patent(ungrouped, company, id, r1, r2):
     row.append(len(remote_set))
     
         
-    # get local country
+    #get the country data
     country = local_center.get_country()
-    # get local state if country is usa 
-    state = local_center.get_state()    
-    if country == '' or state == '':
-        # get local country
-        coord1 = str(local_center.get_lat()) +","+ str(local_center.get_lng())
-        response1 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord1,
+    state = local_center.get_state()   
+    if country != 'US':
+        other_center.set_state("N/A")
+    elif country == 'US':
+        if state == '':
+            coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
+            response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
+                        params={"key":formulas.get_api_key(),
+                                })
+            data2 = response2.json()
+            try:
+                state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
+                other_center.set_state(state)
+            except:
+                other_center.set_state("N/A")
+    else:
+        coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
+        response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                     params={"key":formulas.get_api_key(),
                             })
-        data1 = response1.json()
-        #get the country data
-        if country == '':
+        data2 = response2.json()
+        if state == '':
             try:
-                country = str(data1['resourceSets'][0]['resources'][0]['address']['countryRegion'])
+                country = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
+                if country == 'US':
+                    state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
+                    other_center.set_state(state)
+                else:
+                    other_center.set_state("N/A")
             except:
                 country = "N/A"
-        elif state == '':
-            if country == 'US':
-                #get the state data
-                try:
-                    state = str(data1['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
-                 
-                except:
-                    state = "N/A"    
-            else:
-                state = 'N/A'  
+                other_center.set_state("N/A")
+        else:
+            try:
+                country = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
+            except:
+                country = "N/A"
            
+    
     
     
     #list of sets of remote groups
