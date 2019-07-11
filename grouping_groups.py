@@ -328,7 +328,14 @@ if __name__ == '__main__':
     print('base radius: ' + str(r_base))
     print('percent coverage: ' + str(percent_coverage))
     
+    cnt = 0
+    co_num = len(company_groups)
+    
     #go through every company and group all the patent groups
     for company_id, group_list in company_groups.items():
+        # keep track of where we are in the computation
+        print(str(company_id) + ': ' + str(100 * float(cnt)/float(co_num)) + " percent complete")
+        cnt += 1
+        
         output_each_patent(group_list, id_to_company[company_id], company_id, r_base, percent_coverage)
     
