@@ -276,20 +276,29 @@ if __name__ == '__main__':
     # process patent records
 
 
-    with open('inputs/patent_list_100company.csv', encoding='latin-1') as csvfile:
+    with open('inputs/patent_list_acquirer.csv', encoding='latin-1') as csvfile:
         reader_count = csv.DictReader(csvfile, delimiter=',')
         total_length =  sum(1 for row in reader_count)
-    with open('inputs/patent_list_100company.csv', encoding='latin-1') as csvfile:
+    with open('inputs/patent_list_acquirer.csv', encoding='latin-1') as csvfile:
 
         reader = csv.DictReader(csvfile, delimiter=',')
         
         print(total_length)
         id_dict = {}
+        
+        # create a counter to keep track of processing
+        cnt = 0
+        
         for row in reader:
-            print(reader.line_num)
+            #print(reader.line_num)
+            
+            #use this to track processing
+            print(str(100 * (float(cnt) / float(total_length))) + ' percent complete')
+            cnt += 1
+            
             patent = row['patent_id']
             company_id = row['id']
-            company = row['acquiree_name']
+            company = row['acquirer_name']
             lat = fast_real(row['inventor_add_lat'])
             lng = fast_real(row['inventor_add_lon'])
             inventor_id = row['inventor_id']
@@ -326,7 +335,14 @@ if __name__ == '__main__':
                 inventor_list = [new_inventor]
                 id_dict[patent] = (inventor_list, company_id, company)
             
+        #track processing of companies
+        cnt = 0
+        co_num = len(id_dict)
+        
         for key, ungrouped in id_dict.items():
-            print(key)
+            # keep track of where we are in the computation
+            print(str(key) + ': ' + str(100 * float(cnt)/float(co_num)) + " percent complete")
+            cnt += 1
+            
             output_each_patent(ungrouped[0], key, r1, r2, ungrouped[1], ungrouped[2])
 
