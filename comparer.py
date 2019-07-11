@@ -37,17 +37,21 @@ def get_cluster_set(filename, companies):
         for row in reader:
             curr_company = row['company']
             if curr_company in companies:
-                # list of clusters in dictionary form with local cluster at index 0
+                # list of clusters in tuple form with local cluster at index 0
                 cluster_list = [] 
                 #get the hq cluster
                 local_cluster_str = row['HQ']
                 local_cluster_dict = ast.literal_eval(local_cluster_str)
-                cluster_list.append(local_cluster_dict)
+                local_cluster_lat = local_cluster_dict['center_lat']
+                local_cluster_lng = local_cluster_dict['center_lng']
+                cluster_list.append((local_cluster_lat, local_cluster_lng))
                 #get the remote clusters
                 remote_cluster_list_str = row['remote_groups']
                 remote_cluster_dict_list = ast.literal_eval(remote_cluster_list_str)
                 for remote_dict in remote_cluster_dict_list:
-                    cluster_list.append(remote_dict)
+                    remote_lat = remote_dict['center_lat']
+                    remote_lng = remote_dict['center_lng']
+                    cluster_list.append((remote_lat, remote_lng))
                 company_to_clusterset[curr_company] = cluster_list
             
             
@@ -94,14 +98,14 @@ if __name__ == '__main__':
     #turn these two dictionaries into one dictionary with two sets per company key
     company_cluster_sets = {}
     for company in companies:
-        set_one = method_one_clusters[company]
-        set_two = method_two_clusters[company]
-        company_cluster_sets[company] = (set_one, set_two)
+        list_one = method_one_clusters[company]
+        list_two = method_two_clusters[company]
+        company_cluster_sets[company] = (list_one, list_two)
         
-    #for each company, pair the corresponding clusters and store them as a set of tuples of coordinates
+    #for each company, pair the corresponding clusters and store them as a list of tuples of coordinates
     company_paired_clusters = {}
-    for company, (set_one, set_two) in company_cluster_sets.items():
-        company_paired_clusters[company] = pair_clusters(set_one, set_two)
+    for company, (list_one, list_two) in company_cluster_sets.items():
+        company_paired_clusters[company] = pair_clusters(list_one, list_two)
         
     #write the body of the data
     with open('outputs/method_comparison.tsv', 'n', newline="\n", encoding='utf-8-sig') as out_file: 
