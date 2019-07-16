@@ -32,9 +32,15 @@ class group:
     def get_country(self):
         return self.country
     
+    def set_country(self, country):
+        self.country = country
+    
     def get_state(self):
         return self.state
     
+    def set_state(self, state):
+        self.state = state
+        
     def get_locations(self):
         return self.locations
     

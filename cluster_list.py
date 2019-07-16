@@ -6,6 +6,10 @@ import Group
 from fastnumbers import fast_real
 
 cluster_id = 1
+api_calls = 0
+failed_api_calls = 0
+output_name = 'outputs/cluster_list_acquiree.tsv'
+input_name = 'inputs/patent_list_acquiree.csv'
 
 def get_focal_point(location_list, r1):
     # list of location set around every point in tuple form (location, set)
@@ -15,10 +19,12 @@ def get_focal_point(location_list, r1):
 
         lat1 = location.get_lat()
         lon1 = location.get_lng()
+        #print(str(lat1) + ', ' + str(lon1))
         local_list = []
         for other_location in location_list:
             lat2 = other_location.get_lat()
             lon2 = other_location.get_lng()
+            #print(str(lat2) + ', ' + str(lon2))
             try:  
                 dist = formulas.haversine(lat1, lon1, lat2, lon2)
                 if dist <= float(r1):
@@ -57,6 +63,8 @@ def create_remote_list(focal_point, location_list, r2):
     return remote_list
 
 def generate_geo_relationship(country, other_center):
+    global api_calls
+    
     #get the country data
     country2 = other_center.get_country()
     state = other_center.get_state()   
@@ -68,7 +76,9 @@ def generate_geo_relationship(country, other_center):
             response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                         params={"key":formulas.get_api_key(),
                                 })
+            api_calls += 1
             data2 = response2.json()
+            
             try:
                 state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
                 other_center.set_state(state)
@@ -79,7 +89,9 @@ def generate_geo_relationship(country, other_center):
         response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                     params={"key":formulas.get_api_key(),
                             })
+        api_calls += 1
         data2 = response2.json()
+        
         if state == '':
             try:
                 country2 = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
@@ -107,6 +119,8 @@ def generate_geo_relationship(country, other_center):
 
     
 def output_each_patent(ungrouped, patent, r1, r2, company_id, company):
+    global api_calls
+    
     #get the local locations
     (local_center, local_set) = get_focal_point(ungrouped, r1)
     #get the remote locations
@@ -117,43 +131,43 @@ def output_each_patent(ungrouped, patent, r1, r2, company_id, company):
         if loc not in remote_set and not loc in local_set:
             inbetween.append(loc)
             
-    
-    
-        
     #get the country data
     country = local_center.get_country()
     state = local_center.get_state()   
     if country != 'US':
-        other_center.set_state("N/A")
+        local_center.set_state("N/A")
     elif country == 'US':
         if state == '':
-            coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
+            coord2 = str(local_center.get_lat()) +","+ str(local_center.get_lng())
             response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                         params={"key":formulas.get_api_key(),
                                 })
+            api_calls += 1
             data2 = response2.json()
+            
             try:
                 state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
-                other_center.set_state(state)
+                local_center.set_state(state)
             except:
-                other_center.set_state("N/A")
+                local_center.set_state("N/A")
     else:
         coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
         response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                     params={"key":formulas.get_api_key(),
                             })
+        api_calls += 1
         data2 = response2.json()
         if state == '':
             try:
                 country = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
                 if country == 'US':
                     state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
-                    other_center.set_state(state)
+                    local_center.set_state(state)
                 else:
-                    other_center.set_state("N/A")
+                    local_center.set_state("N/A")
             except:
                 country = "N/A"
-                other_center.set_state("N/A")
+                local_center.set_state("N/A")
         else:
             try:
                 country = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
@@ -172,7 +186,7 @@ def output_each_patent(ungrouped, patent, r1, r2, company_id, company):
             remote_set.remove(loc)
         
         
-    with open('outputs/cluster_list.tsv', 'a', newline="\n", encoding='latin-1') as out_file: 
+    with open(output_name, 'a', newline="\n", encoding='latin-1') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
         
         global cluster_id
@@ -195,7 +209,7 @@ def output_each_patent(ungrouped, patent, r1, r2, company_id, company):
         row.append('; '.join(local_set_string))
         row.append(local_center.get_lat())
         row.append(local_center.get_lng())
-        row.append(state)
+        row.append(local_center.get_state())
         row.append(country)
         row.append('domestic')
         row.append('N/A')
@@ -272,7 +286,7 @@ def output_each_patent(ungrouped, patent, r1, r2, company_id, company):
 if __name__ == '__main__':
     item_id = 0
     # write header
-    with open('outputs/cluster_list.tsv', 'w', newline="\n", encoding='latin-1') as out_file: 
+    with open(output_name, 'w', newline="\n", encoding='latin-1') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
         header = ["cluster_id", "company_id", "company", "patent_id", "local_radius", "remote_radius", "number_of_inventors", "locations", "center_lat", "center_lng", "state", 
                   "country", "geographical_relationship", "haversine_distance_to_local"]
@@ -293,10 +307,10 @@ if __name__ == '__main__':
     # process patent records
 
 
-    with open('inputs/patent_list_acquirer.csv', encoding='latin-1') as csvfile:
+    with open(input_name, encoding='utf-8-sig') as csvfile:
         reader_count = csv.DictReader(csvfile, delimiter=',')
         total_length =  sum(1 for row in reader_count)
-    with open('inputs/patent_list_acquirer.csv', encoding='latin-1') as csvfile:
+    with open(input_name, encoding='utf-8-sig') as csvfile:
 
         reader = csv.DictReader(csvfile, delimiter=',')
         
@@ -315,7 +329,7 @@ if __name__ == '__main__':
             
             patent = row['patent_id']
             company_id = row['id']
-            company = row['acquirer_name']
+            company = row['acquiree_name']
             lat = fast_real(row['inventor_add_lat'])
             lng = fast_real(row['inventor_add_lon'])
             inventor_id = row['inventor_id']
@@ -340,17 +354,24 @@ if __name__ == '__main__':
                 
             new_inventor = Inventor.inventor(patent, company_id, inventor_id, lat, lng, city, state, country)
             
+            if new_inventor.called_api:
+                api_calls += 1
+                
+                if new_inventor.failed_api:
+                    failed_api_calls += 1
+            
             #don't do anything if the inventor has a location that can't be found
             if new_inventor.get_lat() == 404 or new_inventor.get_lng() == 404:
                 continue
             
-            if patent in id_dict:
-                inventor_list = id_dict[patent][0]
+            patent_company_key = str(patent) + str(company_id)
+            if patent_company_key in id_dict:
+                inventor_list = id_dict[patent_company_key][0]
                 inventor_list.append(new_inventor)
-                id_dict[patent] = (inventor_list, company_id, company)
+                id_dict[patent_company_key] = (inventor_list, patent, company_id, company)
             else:
                 inventor_list = [new_inventor]
-                id_dict[patent] = (inventor_list, company_id, company)
+                id_dict[patent_company_key] = (inventor_list, patent, company_id, company)
             
         #track processing of companies
         cnt = 0
@@ -361,5 +382,8 @@ if __name__ == '__main__':
             print(str(key) + ': ' + str(100 * float(cnt)/float(co_num)) + " percent complete")
             cnt += 1
             
-            output_each_patent(ungrouped[0], key, r1, r2, ungrouped[1], ungrouped[2])
+            output_each_patent(ungrouped[0], ungrouped[1], r1, r2, ungrouped[2], ungrouped[3])
+            
+        print('number of api calls: ' + str(api_calls))
+        print('number of failed api calls: ' + str(failed_api_calls))
 

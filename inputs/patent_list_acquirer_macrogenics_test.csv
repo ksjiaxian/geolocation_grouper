@@ -1,0 +1,25 @@
+﻿acquirer_name,id,patent_id,patent_priority_year,inventor_id,inventor_name1,inventor_add_city,inventor_add_state,inventor_add_country,inventor_add_lat,inventor_add_lon,acquirer_country_code,acquirer_state_code,acquirer_region,acquirer_city
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,8802091,2012,5652117-1,"Moore, Paul A.",North Bethesda,MD,US,39.0444,-77.1192,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,8802091,2012,6503511-3,"Johnson, Leslie S.",Darnestown,MD,US,39.1033,-77.2911,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,8802091,2012,7112439-2,"Huang, Ling",Bethesda,MD,US,38.9806,-77.1006,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,8802091,2012,8802091-5,"Chen, Francine Z.",San Francisco,CA,US,37.775,-122.4183,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9150656,2011,5652117-1,"Moore, Paul A.",North Bethesda,MD,US,39.0444,-77.1192,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9150656,2011,6503511-3,"Johnson, Leslie S.",Darnestown,MD,US,39.1033,-77.2911,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9150656,2011,7112439-2,"Huang, Ling",Bethesda,MD,US,38.9806,-77.1006,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9150656,2011,9150656-5,"Chen, Francine Zhifen",San Francisco,CA,US,37.775,-122.4183,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9441049,2014,5652117-1,"Moore, Paul A.",North Bethesda,MD,US,39.0444,-77.1192,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9441049,2014,6503511-3,"Johnson, Leslie S.",Darnestown,MD,US,39.1033,-77.2911,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9441049,2014,7112439-2,"Huang, Ling",Bethesda,MD,US,38.9806,-77.1006,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9441049,2014,8802091-5,"Chen, Francine Z.",San Francisco,CA,US,37.775,-122.4183,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714295,2015,5652117-1,"Moore, Paul A.",North Bethesda,MD,US,39.0444,-77.1192,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714295,2015,6503511-3,"Johnson, Leslie S.",Darnestown,MD,US,39.1033,-77.2911,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714295,2015,7112439-2,"Huang, Ling",Bethesda,MD,US,38.9806,-77.1006,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714295,2015,9150656-5,"Chen, Francine Zhifen",San Francisco,CA,US,37.775,-122.4183,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714296,2015,5652117-1,"Moore, Paul A.",North Bethesda,MD,US,39.0444,-77.1192,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714296,2015,6503511-3,"Johnson, Leslie S.",Darnestown,MD,US,39.1033,-77.2911,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714296,2015,7112439-2,"Huang, Ling",Bethesda,MD,US,38.9806,-77.1006,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9714296,2015,9150656-5,"Chen, Francine Zhifen",San Francisco,CA,US,37.775,-122.4183,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9896508,2016,5652117-1,"Moore, Paul A.",North Potomac,MD,US,39.0828,-77.2653,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9896508,2016,6503511-3,"Johnson, Leslie S.",Darnestown,MD,US,39.1033,-77.2911,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9896508,2016,7112439-2,"Huang, Ling",Bethesda,MD,US,38.9806,-77.1006,USA,MD,"Washington, D.C.",Rockville
+macrogenics,91efe631-e7e0-4dfa-1f5e-5f101dd2d765,9896508,2016,9150656-5,"Chen, Francine Zhifen",San Francisco,CA,US,37.775,-122.4183,USA,MD,"Washington, D.C.",Rockville

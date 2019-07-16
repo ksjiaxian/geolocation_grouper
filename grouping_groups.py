@@ -6,6 +6,10 @@ import formulas
 import math
 from fastnumbers import fast_real
                 
+api_calls = 0
+output_name = 'outputs/grouped_groups_acquiree.tsv'
+input_name = 'outputs/cluster_list_acquiree.tsv'
+
 def generate_geo_relationship(country, other_center):
    
     #get the country data
@@ -19,6 +23,8 @@ def generate_geo_relationship(country, other_center):
             response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                         params={"key":formulas.get_api_key(),
                                 })
+            api_calls += 1
+            
             data2 = response2.json()
             try:
                 state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
@@ -94,36 +100,41 @@ def output_each_patent(ungrouped, company, company_id, base_radius, coverage_per
     country = hq.get_country()
     state = hq.get_state()     
     if country != 'US':
-        other_center.set_state("N/A")
+        hq.set_state("N/A")
     elif country == 'US':
         if state == '':
             coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
             response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                         params={"key":formulas.get_api_key(),
                                 })
+            
+            api_calls += 1
+            
             data2 = response2.json()
             try:
                 state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
-                other_center.set_state(state)
+                hq.set_state(state)
             except:
-                other_center.set_state("N/A")
+                hq.set_state("N/A")
     else:
         coord2 = str(other_center.get_lat()) +","+ str(other_center.get_lng())
         response2 = requests.get("http://dev.virtualearth.net/REST/v1/Locations/" + coord2,
                     params={"key":formulas.get_api_key(),
                             })
+        api_calls += 1
+        
         data2 = response2.json()
         if state == '':
             try:
                 country = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
                 if country == 'US':
                     state = str(data2['resourceSets'][0]['resources'][0]['address']['adminDistrict'])
-                    other_center.set_state(state)
+                    hq.set_state(state)
                 else:
-                    other_center.set_state("N/A")
+                    hq.set_state("N/A")
             except:
                 country = "N/A"
-                other_center.set_state("N/A")
+                hq.set_state("N/A")
         else:
             try:
                 country = str(data2['resourceSets'][0]['resources'][0]['address']['countryRegion'])
@@ -144,7 +155,7 @@ def output_each_patent(ungrouped, company, company_id, base_radius, coverage_per
         for loc in remote_group:
             remote_set.remove(loc)
             
-    with open('outputs/grouped_groups.tsv', 'a', newline="\n", encoding='utf-8-sig') as out_file: 
+    with open(output_name, 'a', newline="\n", encoding='utf-8-sig') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
         
         # convert local_set from a set of tuples to a list of strings
@@ -261,10 +272,10 @@ def get_focal_point(location_list, r_base):
 if __name__ == '__main__':    
     
     #write header
-    with open('outputs/grouped_groups.tsv', 'w', newline="\n", encoding='utf-8-sig') as out_file: 
+    with open(output_name, 'w', newline="\n", encoding='utf-8-sig') as out_file: 
         csv_writer = csv.writer(out_file, delimiter='\t')
         header = ["company", "id", "num_of_clusters_in_HQ_region", "num_of_clusters_in_remote_regions", "total_number_of_groups (HQ+remote)", "num_of_R&D_centers", "num_of_remote_R&D_centers", "radius_base", 
-                  "coverage_percentage", "HQ", "remote_groups", "%_coverage_on_local", "%_coverage_on_remote"]
+                  "coverage_percentage", "HQ", "remote_groups", "percent_coverage_on_local", "percent_coverage_on_remote"]
         csv_writer.writerow(header)
         
     #create a dictionary that maps company to a list of the company patent groupings
@@ -274,7 +285,7 @@ if __name__ == '__main__':
     id_to_company = {}
 
     #read in the data from the previous module
-    with open('outputs/cluster_list.tsv', encoding='utf-8-sig') as csvfile:
+    with open(input_name, encoding='utf-8-sig') as csvfile:
         reader = csv.DictReader(csvfile, delimiter='\t')
         
         #go through each row in the reader and turn each group row into a group object
@@ -338,4 +349,8 @@ if __name__ == '__main__':
         cnt += 1
         
         output_each_patent(group_list, id_to_company[company_id], company_id, r_base, percent_coverage)
+        
+    # should be 0
+    print(api_calls)
+    
     

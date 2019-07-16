@@ -1,6 +1,8 @@
 from fastnumbers import fast_real
 import requests
 from unidecode import unidecode
+import cluster_list
+import formulas
 
 class inventor:
     def __init__(self, patent_id, company, inventor_id, lat, lng, city, state, country):
@@ -9,6 +11,8 @@ class inventor:
         self.lat = fast_real(lat)
         self.lng = fast_real(lng)
         self.company = company
+        self.called_api = False
+        self.failed_api = False
         
         if self.lat == '' or self.lng == '':
             try:
@@ -18,12 +22,18 @@ class inventor:
                                 params={"include":"queryParse",
                                 "key":formulas.get_api_key()})
                 data = response.json()
+                
+                self.called_api = True
+                
                 self.lat = data['resourceSets'][0]['resources'][0]['point']['coordinates'][0]
                 self.lng = data['resourceSets'][0]['resources'][0]['point']['coordinates'][1]
-            
+        
             except:
+                print('error when finding lat and lng')
+                self.failed_api = True
                 self.lat = 404
                 self.lng = 404
+        
         self.city = city
         self.state = state
         self.country = country
